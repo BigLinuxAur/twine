@@ -14,7 +14,7 @@ provides=("$pkgname")
 source=("https://github.com/klembot/twinejs/releases/download/${pkgver}/Twine-${pkgver}-Linux-x64.zip"
         "https://twinery.org/icons/twine.svg"
         "twinejs.desktop")
-md5sums=('SKIP')
+md5sums=('SKIP' 'SKIP' 'SKIP')
 if [ -e "${pkgname}.install" ];then
     install=${pkgname}.install
 elif [ -e "pkgbuild.install" ];then
