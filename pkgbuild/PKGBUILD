@@ -1,6 +1,6 @@
 # Maintainer: Barnabé di Kartola <barnabedikartola@gmail.com>
 
-pkgname=twinejs
+pkgname=twine-engine
 pkgdesc="an open-source tool for telling interactive, nonlinear stories"
 depends=('libxss' 'nss' 'gtk3')
 # makedepends=('')
@@ -13,7 +13,7 @@ url="http://twinery.org/"
 provides=("$pkgname")
 source=("https://github.com/klembot/twinejs/releases/download/${pkgver}/Twine-${pkgver}-Linux-x64.zip"
         "https://twinery.org/icons/twine.svg"
-        "twinejs.desktop")
+        "twine.desktop")
 md5sums=('SKIP' 'SKIP' 'SKIP')
 if [ -e "${pkgname}.install" ];then
     install=${pkgname}.install
@@ -32,9 +32,9 @@ package() {
     pushd ${pkgname}_${pkgver}_linux64
     find -type f -exec install -Dm 755 "{}" "$pkgdir/usr/share/$pkgname/{}" \;
     popd
-    install -D twinejs.desktop "$pkgdir/usr/share/applications/twinejs.desktop"
-    install -D twine.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/twinejs.svg"
+    install -D twine.desktop "$pkgdir/usr/share/applications/twine.desktop"
+    install -D twine.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/twine.svg"
 
     mkdir -p "$pkgdir/usr/bin"
-    ln -s "/usr/share/${pkgname}/twine" "$pkgdir/usr/bin/Twine"
+    ln -s "/usr/share/${pkgname}/twine" "$pkgdir/usr/bin/twine"
 }
